@@ -2,18 +2,38 @@
     <head>
         <meta charset="utf-8">
         <title>RepeatYoutube</title>
+        <link rel="stylesheet" type="text/css"  href="./style/style.css">
     </head>
     <body>
-        <header class="">
-            <h1>Let's Repeat</h1>
+        <header>
+            <h1>Enjoy Repeating</h1>
         </header>
-        <section class="">
-        <p>Hello LiT!</p>
-        <div></div>
-        <div></div>
+        <section id="content">
+            <div id="sideBar">
+            <div id="addForm">
+                <input type="text" id="videoUrl"  class="form">
+                <button type="button" id="btAddUrl" class="form">追加</button>
+            </div>
+            <ul id="videoList"></ul>
+            <div id="shareForm">
+                <input type="text" id="shareUrl" class="form">
+                <button type="button" id="btMakeShareUrl" class="form">共有</button>
+            </div>
+        </div>
+        <div id="videoForm">
+            <div id="player"></div>
+            <div id="functionButtons">
+                <button type="button" id="btBack">戻る</button>
+                <button type="button" id="btRepeat">リピート</button>
+                <button type="button" id="btNext">進む</button>
+            </div>
+        </div>
     </section>
     <footer class="">
         This site is No Copyright
     </footer>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script type="text/javascript" src="./script/YoutubeIFrameAPI.js"></script>
+    <script type="text/javascript" src="./script/script.js"></script>
     </body>
 </html>

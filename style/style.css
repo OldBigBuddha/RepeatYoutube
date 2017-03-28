@@ -1,0 +1,62 @@
+html {
+    height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #1C1C1C;
+  color: rgb(210, 192, 164);
+
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+}
+
+#content {
+    flex-grow: 1;
+}
+
+#addForm , #shareForm , #content {
+    display: flex;
+    display: -webkit-flex;
+}
+
+.form #sideBar #videoForm {
+    flex-direction: row;
+    -webkit-flex-direction: row;
+}
+
+#sideBar {
+    margin: 0 48px;
+    display: flex;
+    flex-direction: column;
+    max-width: 38%;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+
+    overflow: auto;
+    flex-grow: 1;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#videoList {
+    height: auto;
+    overflow: auto;
+}
+
+.item {
+    vertical-align: top;
+}
+
+#player, #functionButtons {
+    position:relative; /* 絶対配置の基準点 */
+    margin:0 auto; /* ブロック要素の中央揃え */
+}
