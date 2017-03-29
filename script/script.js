@@ -21,8 +21,7 @@ $(function () {
     });
 
     $(document).on("click", ".btDelete", function () {
-        var l = Array.prototype.slice($("#videoList").children);
-        var index = l.indexOf(this);
+       var index = $("#videoList").index(this);
         console.log(repeatVideos[index]);
     });
 
