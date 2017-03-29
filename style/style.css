@@ -54,7 +54,7 @@ li {
     padding: 2px;
 }
 
-button .item {
+button.item {
     opacity: 0;
 }
 
