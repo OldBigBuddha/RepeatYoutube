@@ -53,9 +53,10 @@ function setList( id ) {
                           '>': '&gt;',
                         }[match]
                     });
-                        $('#videoList').append( "<li class='item'>" +
-                                                                "<img src=\"http://i.ytimg.com/vi/" + id + "/default.jpg\">" +
-                                                                "<span>" + name + "</span>" +
+                        $('#videoList').append( "<li>" +
+                                                                "<button class='btDelete item'>×</button> " +
+                                                                "<img src=\"https://i.ytimg.com/vi/" + id + "/default.jpg\" class='item'>" +
+                                                                "<span class='item'>" + name + "</span>" +
                                                                 "</li>" );
                     }
                 });

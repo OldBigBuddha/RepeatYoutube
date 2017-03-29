@@ -46,6 +46,12 @@ ul {
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+li {
+    display: flex;
+}
+.item {
+    flex-direction: row;
+}
 
 #videoList {
     height: auto;
