@@ -53,6 +53,7 @@ li {
 button.item {
     margin: 8px;
     background: transparent;
+    transition: .3s;
     border-style: none;
     color: rgb(210, 192, 164);
     font-size: 15px;
