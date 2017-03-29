@@ -59,8 +59,10 @@ function setList( id ) {
                                                                 "<span class='item'>" + name + "</span>" +
                                                                 "</li>" );
                     }
-                    $("button.btDelete.item").on("click", function () {
+                    $("button.item").on("click", function () {
                         console.log("Clicked");
+                        var index = $("button.btDelete").index( this );
+                        console.log("Index:" + index);
                     });
                 });
 
