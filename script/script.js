@@ -20,7 +20,7 @@ $(function () {
         getShortUrl( makeShareUrl() );
     });
 
-    $("button.btDelete").on("click", function () {
+    $(".btDelete").on("click", function () {
         var index = $("button.btDelete").index(this);
         console.log("index:" + index);
 
