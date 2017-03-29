@@ -24,7 +24,7 @@ $(function () {
     if (ids != "") {
       ids = ids.split("=")[1];
       repeatVideos = ids.split("&");
-      for (var id in repeatVideos) viewList(repeatVideos[id]);
+      for (var id in repeatVideos) setList(repeatVideos[id]);
   }
   history.replaceState('','','/');
 });
