@@ -51,6 +51,7 @@ li {
 }
 
 button.item {
+    margin: 8px;
     background: transparent;
     border-style: none;
     color: rgb(210, 192, 164);
@@ -59,7 +60,7 @@ button.item {
 }
 
 button.item:hover {
-    background: rgb(236, 226, 210)
+    background: rgb(236, 226, 210);
 }
 
 
