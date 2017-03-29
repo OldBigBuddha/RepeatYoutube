@@ -19,7 +19,7 @@ $(function () {
     $("#btMakeShareUrl").on("click", function () {
         getShortUrl( makeShareUrl() );
 
-        getSelection().removeAllRange();
+        getSelection().removeAllRanges();
 
         var isFirstMade = false;
             // 選択
