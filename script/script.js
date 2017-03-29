@@ -40,7 +40,7 @@ $(function () {
     var ids = location.search;
     if (ids != "") {
       repeatVideos = ids.split("=")[1].split("&");
-      for (var i = 0;i > repeatVideos.length; i++ ) {
+      for (var i = 0;i < repeatVideos.length; i++ ) {
           setList(repeatVideos[i]);
       }
   }
