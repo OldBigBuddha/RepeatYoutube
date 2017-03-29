@@ -19,6 +19,8 @@ $(function () {
     $("#btMakeShareUrl").on("click", function () {
         getShortUrl( makeShareUrl() );
 
+        getSelection().removeAllRange();
+
         var isFirstMade = false;
             // 選択
            var range = document.createRange();
