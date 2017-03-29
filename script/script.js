@@ -67,6 +67,10 @@ function makeShareUrl() {
 function getShortUrl(url) {
     $.get("https://api-ssl.bitly.com/v3/shorten?access_token=37b1f98671278b7007c28ab9e5b69a78f57f04fa&longUrl=" + url,
                 function (response) {
-                    $("#shareUrl").val(response);
+                    if (response.status_txt == "OK") {
+                        $("#shareUrl").val( response.data.url ) ;
+                    }　else {
+                        console.error("Couldn't get shortURL");
+                    }
                 });
 }
