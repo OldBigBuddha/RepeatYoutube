@@ -2,7 +2,6 @@ var repeatVideos = [];     //IDを管理
 var iNowVideoPointer = 0;
 
 $(function () {
-    setList( repeatVideos[0] );
     $('#btAddUrl').on("click",function () {
         var newUrl = $('#videoUrl').val();
         repeatVideos.push( getId( newUrl ) );
@@ -23,7 +22,7 @@ $(function () {
     var ids = location.search;
     if (ids != "") {
       repeatVideos = ids.split("=")[1].split("&");
-      updateList();
+      for (var i = 0; i < repeatVideos.length; i++) setList( repeatVideos[i] );
   }
   // history.replaceState('','','/');
 });
@@ -51,11 +50,11 @@ function setList( id ) {
                           '>': '&gt;',
                         }[match]
                     });
-                        $('#videoList').append( "<li>" +
-                                                                "<button class='btDelete item'>×</button> " +
-                                                                "<img src=\"https://i.ytimg.com/vi/" + id + "/default.jpg\" class='item'>" +
-                                                                "<span class='item'>" + name + "</span>" +
-                                                                "</li>" );
+                    $('#videoList').append( "<li>" +
+                        "<button class='btDelete item'>×</button> " +
+                        "<img src=\"https://i.ytimg.com/vi/" + id + "/default.jpg\" class='item'>" +
+                        "<span class='item'>" + name + "</span>" +
+                        "</li>" );
                     }
                     $("button.item").each(function (index, v) {
                         $(v).on("click", function () {
@@ -64,14 +63,6 @@ function setList( id ) {
                         });
                     });
             });
-}
-
-// Listの更新
-function updateList() {
-    // $("li").remove();
-    for (var i = 0; i < repeatVideos.length; i++) {
-        setList( repeatVideos[i] );
-    }
 }
 
 // 次の動画を再生する
@@ -97,6 +88,7 @@ function makeShareUrl() {
     return url;
 }
 
+// 共有用ショートURL作成
 function getShortUrl(url) {
     $.get("https://api-ssl.bitly.com/v3/shorten?access_token=37b1f98671278b7007c28ab9e5b69a78f57f04fa&longUrl=" + encodeURIComponent(url),
                 function (response) {
