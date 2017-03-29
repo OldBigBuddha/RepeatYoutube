@@ -58,9 +58,10 @@ function setList( id ) {
                                                                 "</li>" );
                     }
                     $("button.item").each(function (e, v) {
-                        $(v).remove();
-                        repeatVideos.splice(index, 1);
-
+                        $(v).on("click", function () {
+                            $(v).remove();
+                            repeatVideos.splice(index, 1);
+                        });
                     });
 
                 //     .on("click", function () {
