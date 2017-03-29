@@ -20,7 +20,7 @@ $(function () {
         getShortUrl( makeShareUrl() );
     });
 
-    $(".btDelete").on("click", function () {
+    $(document).on("click", ".btDelete", function () {
         var l = Arrar.prototype.slice($("#videoList").children);
         var index = l.indexOf(this);
         console.log(repeatVideos[index]);
