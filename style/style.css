@@ -51,11 +51,17 @@ li {
 }
 
 button.item {
-    background: none;
+    background: transparent;
     border-style: none;
     color: rgb(210, 192, 164);
     font-size: 15px;
+    cursor: pointer;
 }
+
+button.item:hover {
+    background: rgb(236, 226, 210)
+}
+
 
 #videoList {
     height: auto;
