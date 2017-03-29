@@ -23,9 +23,7 @@ $(function () {
     var ids = location.search;
     if (ids != "") {
       repeatVideos = ids.split("=")[1].split("&");
-      for (var i = 0;i < repeatVideos.length; i++ ) {
-          setList(repeatVideos[i]);
-      }
+      updateList();
   }
   // history.replaceState('','','/');
 });
@@ -60,12 +58,19 @@ function setList( id ) {
                                                                 "</li>" );
                     }
                     $("button.item").on("click", function () {
-                        console.log("Clicked");
                         var index = $("button.btDelete").index( this );
-                        console.log("Index:" + index);
+                        repeatVideos.splice(index, 1);
+                        updateList();
                     });
                 });
 
+}
+
+// Listの更新
+function updateList() {
+    for (var i = 0; i < repeatVideos.length; i++) {
+        setList( repeatVideos[i] );
+    }
 }
 
 // 次の動画を再生する
