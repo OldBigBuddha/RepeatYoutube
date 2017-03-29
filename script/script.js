@@ -6,7 +6,7 @@ $(function () {
     $('#btAddUrl').on("click",function () {
         var newUrl = $('#videoUrl').val();
         repeatVideos.push( getId( newUrl ) );
-        index_now = repeatVideos.length - 1;
+        index_id = repeatVideos.length - 1;
         console.log("add");
         setList( getId( newUrl ) );
         $('#videoUrl').val('');
