@@ -34,14 +34,10 @@ $(function () {
             }, 2000);
 
     });
-    // $("#shareUrl").on("click", function () {
-    //
-    // })
 
     var ids = location.search;
     if (ids != "") {
-      ids = ids.split("=")[1];
-      repeatVideos = ids.split("&");
+      repeatVideos = ids.split("=")[1].split("&");
       for (var i = 0;i > repeatVideos.length; i++ ) {
           setList(repeatVideos[i]);
       }
