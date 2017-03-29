@@ -91,6 +91,7 @@ function getShortUrl(url) {
                     }　else {
                         console.error("Couldn't get shortURL");
                     }
+                    selectCopy();
                 });
 }
 
