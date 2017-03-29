@@ -58,8 +58,8 @@ function backPlay() {
 //共有用元ＵＲＬ作成
 function makeShareUrl() {
     var url = "https://oldbigbuddha.github.io/RepeatYoutube_Remake";
-    for (var i = 0; i < playlist.length; i++) {
-        url += i !== (playlist.length - 1) ? playlist[i] + "&" : playlist[i];
+    for (var i = 0; i < repeatVideos.length; i++) {
+        url += i !== (repeatVideos.length - 1) ? repeatVideos[i] + "&" : repeatVideos[i];
     }
     return url;
 }
