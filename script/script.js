@@ -20,6 +20,12 @@ $(function () {
         getShortUrl( makeShareUrl() );
     });
 
+    $(".btDelete").on("click", function () {
+        var l = Arrar.prototype.slice($("#videoList").children);
+        var index = l.indexOf(this);
+        console.log(repeatVideos[index]);
+    });
+
     var ids = location.search;
     if (ids != "") {
       repeatVideos = ids.split("=")[1].split("&");
