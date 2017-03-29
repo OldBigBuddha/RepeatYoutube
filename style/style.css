@@ -41,17 +41,13 @@ ul {
 
     overflow: auto;
     flex-grow: 1;
-
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
 }
 li {
     display: flex;
 }
 .item {
     flex-direction: row;
-    padding: 2px;
+
 }
 
 button.item {
@@ -63,7 +59,6 @@ button.item {
 
 #videoList {
     height: auto;
-    overflow: auto;
 }
 
 .item {
