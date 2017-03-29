@@ -57,18 +57,24 @@ function setList( id ) {
                                                                 "<span class='item'>" + name + "</span>" +
                                                                 "</li>" );
                     }
-                    $("button.item").on("click", function () {
-                        var index = $("button.btDelete").index( this );
+                    $("button.item").each(function (e, v) {
+                        $(v).remove();
                         repeatVideos.splice(index, 1);
-                        updateList();
+
                     });
-                });
+
+                //     .on("click", function () {
+                //         var index = $("button.btDelete").index( this );
+                //         repeatVideos.splice(index, 1);
+                //         updateList();
+                //     });
+                // });
 
 }
 
 // Listの更新
 function updateList() {
-    $("li").remove();
+    // $("li").remove();
     for (var i = 0; i < repeatVideos.length; i++) {
         setList( repeatVideos[i] );
     }
