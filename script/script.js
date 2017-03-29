@@ -18,9 +18,21 @@ $(function () {
     });
     $("#btMakeShareUrl").on("click", function () {
         getShortUrl( makeShareUrl() );
-       var range = document.createRange();
-       range.selectNode($("#shareUrl").get(0));
-       getSelection().addRange(range);
+
+        var isFirstMade = false;
+            // 選択
+           var range = document.createRange();
+           range.selectNode($("#shareUrl").get(0));
+           getSelection().addRange(range);
+
+        //    コピー
+            document.execCommand("copy");
+
+            $("#btMakeShareUrl").attr( { "title":"Copyed" } );
+            setTimeout(function () {
+                $("#btMakeShareUrl").attr( { "title":"Copy to Clipboard" } )
+            }, 2000);
+
     });
     // $("#shareUrl").on("click", function () {
     //
