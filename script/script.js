@@ -53,7 +53,7 @@ function setList( id ) {
                         }[match]
                     });
                     $('#videoList').append( "<li>" +
-                        "<button class='btDelete item' id='item' + " + index_id + ">×</button> " +
+                        "<button class='btDelete item' id='item" + index_id + "'>×</button> " +
                         "<img src=\"https://i.ytimg.com/vi/" + id + "/default.jpg\" class='item'>" +
                         "<span class='item'>" + name + "</span>" +
                         "</li>" );
