@@ -59,10 +59,11 @@ function setList( id ) {
                                                                 "<span class='item'>" + name + "</span>" +
                                                                 "</li>" );
                     }
+                    $("button.btDelete.item").on("click", function () {
+                        console.log("Clicked");
+                    });
                 });
-                $("button.btDelete.item").on("click", function () {
-                    console.log("Clicked");
-                });
+
 }
 
 // 次の動画を再生する
