@@ -97,15 +97,11 @@ function getShortUrl(url) {
 }
 
 function selectCopy() {
-    // 全解除
-    getSelection().removeAllRanges();
-        // 選択
-       var range = document.createRange();
-       range.selectNode($("#shareUrl").get(0));
-       getSelection().addRange(range);
 
-    //    コピー
-        document.execCommand("copy");
+        var clipboard = new Clipboard("#btMakeShareUrl");
+        clipboard.on("success", function (e) {
+            e.clearSelection();
+        });
 
         $("#btMakeShareUrl").attr( { "title":"Copyed" } );
         setTimeout(function () {

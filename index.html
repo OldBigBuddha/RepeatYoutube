@@ -17,7 +17,7 @@
             <ul id="videoList"></ul>
             <div id="shareForm">
                 <input type="text" id="shareUrl" class="form" readonly="readonly">
-                <button type="button" id="btMakeShareUrl" class="form" title="Copy to Clipboard">共有</button>
+                <button type="button" id="btMakeShareUrl" class="form" title="Copy to Clipboard"  data-clipboard-target="#shareUrl">共有</button>
             </div>
         </div>
         <div id="videoForm">
@@ -33,6 +33,7 @@
         This site is No Copyright
     </footer>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.3/clipboard.min.js"></script>
     <script type="text/javascript" src="./script/YoutubeIFrameAPI.js"></script>
     <script type="text/javascript" src="./script/script.js"></script>
     </body>
