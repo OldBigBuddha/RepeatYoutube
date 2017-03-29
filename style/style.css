@@ -55,7 +55,7 @@ li {
 }
 
 button.item {
-    opacity: 0;
+    background: none;
 }
 
 #videoList {
