@@ -71,6 +71,7 @@ function setList( id ) {
                 //     });
                 // });
 
+            });
 }
 
 // Listの更新
