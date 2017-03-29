@@ -68,6 +68,7 @@ function setList( id ) {
 
 // Listの更新
 function updateList() {
+    $("li").remove();
     for (var i = 0; i < repeatVideos.length; i++) {
         setList( repeatVideos[i] );
     }
