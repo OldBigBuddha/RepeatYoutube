@@ -51,6 +51,7 @@ li {
 }
 .item {
     flex-direction: row;
+    padding: 2px;
 }
 
 #videoList {
