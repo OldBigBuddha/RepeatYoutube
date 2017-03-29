@@ -20,9 +20,10 @@ $(function () {
         getShortUrl( makeShareUrl() );
     });
 
-    $(document).on("click", ".btDelete", function () {
-       var index = $("#videoList").index(this);
-        console.log(repeatVideos[index]);
+    $("button.btDelete").on("click", function () {
+        var index = $("button.btDelete").index(this);
+        console.log("index:" + index);
+
     });
 
     var ids = location.search;
