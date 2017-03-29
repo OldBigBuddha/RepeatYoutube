@@ -20,11 +20,6 @@ $(function () {
         getShortUrl( makeShareUrl() );
     });
 
-    $("button.btDelete.item").on("click", function () {
-        console.log("Clicked");
-    });
-
-
     var ids = location.search;
     if (ids != "") {
       repeatVideos = ids.split("=")[1].split("&");
@@ -64,6 +59,9 @@ function setList( id ) {
                                                                 "<span class='item'>" + name + "</span>" +
                                                                 "</li>" );
                     }
+                });
+                $("button.btDelete.item").on("click", function () {
+                    console.log("Clicked");
                 });
 }
 
