@@ -20,7 +20,7 @@ $(function () {
         getShortUrl( makeShareUrl() );
     });
 
-    $("button.btDelete").on("click", function () {
+    $("button.item").on("click", function () {
         console.log("Clicked");
     });
 
