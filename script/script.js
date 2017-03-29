@@ -32,7 +32,8 @@ $(function () {
 
 // YouTubeのURLからIDを取得
 function getId(fullUrl) {
-    return fullUrl.match(/[\?&]v=([-\w]+)/)[1];
+    var match = fullUrl.match(/[\?&]v=([-\w]+)/);
+    if(match != null) return match[1];
 }
 
 // repeatVideosの中をListに表示する
