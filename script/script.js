@@ -20,11 +20,10 @@ $(function () {
         getShortUrl( makeShareUrl() );
     });
 
-    $(".btDelete").on("click", function () {
-        var index = $("button.btDelete").index(this);
-        console.log("index:" + index);
-
+    $("button.btDelete").on("click", function () {
+        console.log("Clicked");
     });
+
 
     var ids = location.search;
     if (ids != "") {
