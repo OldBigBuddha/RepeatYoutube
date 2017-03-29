@@ -18,7 +18,13 @@ $(function () {
     });
     $("#btMakeShareUrl").on("click", function () {
         getShortUrl( makeShareUrl() );
+       var range = document.createRange();
+       range.selectNode($("#shareUrl").get(0));
+       getSelection().addRange(range);
     });
+    // $("#shareUrl").on("click", function () {
+    //
+    // })
 
     var ids = location.search;
     if (ids != "") {
