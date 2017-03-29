@@ -54,6 +54,10 @@ li {
     padding: 2px;
 }
 
+button .item {
+    background-color: #00000000
+}
+
 #videoList {
     height: auto;
     overflow: auto;
