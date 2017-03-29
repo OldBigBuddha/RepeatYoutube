@@ -1,11 +1,12 @@
 var repeatVideos = [];     //IDを管理
 var iNowVideoPointer = 0;
+var index_id;
 
 $(function () {
     $('#btAddUrl').on("click",function () {
         var newUrl = $('#videoUrl').val();
         repeatVideos.push( getId( newUrl ) );
-        console.log( getId( newUrl ) );
+        index_now = repeatVideos.length - 1;
         setList( getId( newUrl ) );
         $('#videoUrl').val('');
     });
@@ -51,7 +52,7 @@ function setList( id ) {
                         }[match]
                     });
                     $('#videoList').append( "<li>" +
-                        "<button class='btDelete item'>×</button> " +
+                        "<button class='btDelete item' id='item' + " + index_id + ">×</button> " +
                         "<img src=\"https://i.ytimg.com/vi/" + id + "/default.jpg\" class='item'>" +
                         "<span class='item'>" + name + "</span>" +
                         "</li>" );
@@ -62,6 +63,7 @@ function setList( id ) {
                             repeatVideos.splice(index, 1);
                         });
                     });
+
             });
 }
 
