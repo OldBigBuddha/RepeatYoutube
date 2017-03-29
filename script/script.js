@@ -16,6 +16,9 @@ $(function () {
     $("#btBack").on("click", function () {
         backPlay();
     });
+    $("#btMakeShareUrl").on("click", function () {
+        getShortUrl( makeShareUrl() );
+    });
 });
 
 // YouTubeのURLからIDを取得
@@ -50,4 +53,20 @@ function backPlay() {
     --iNowVideoPointer;
     if (iNowVideoPointer <= -1) iNowVideoPointer = repeatVideos.length - 1;
     player.loadVideoById(repeatVideos[iNowVideoPointer]);
+}
+
+//共有用元ＵＲＬ作成
+function makeShareUrl() {
+    var url = "https://oldbigbuddha.github.io/RepeatYoutube_Remake";
+    for (var i = 0; i < playlist.length; i++) {
+        url += i !== (playlist.length - 1) ? playlist[i] + "&" : playlist[i];
+    }
+    return url;
+}
+
+function getShortUrl(url) {
+    $.get("https://api-ssl.bitly.com/v3/shorten?access_token=37b1f98671278b7007c28ab9e5b69a78f57f04fa&longUrl=" + url,
+                function (response) {
+                    $("#shareUrl").val(response);
+                });
 }
