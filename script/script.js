@@ -63,14 +63,6 @@ function setList( id ) {
                             repeatVideos.splice(index, 1);
                         });
                     });
-
-                //     .on("click", function () {
-                //         var index = $("button.btDelete").index( this );
-                //         repeatVideos.splice(index, 1);
-                //         updateList();
-                //     });
-                // });
-
             });
 }
 
