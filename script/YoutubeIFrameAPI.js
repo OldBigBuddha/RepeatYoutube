@@ -27,9 +27,6 @@ function onPlayerReady(event) {
 
 // Playerの状態が変更された際に呼ばれる
 function onPlayerStateChange(event) {
-    // var playerStatus = event.target.getPlayerState();   //現在のPlayerの状態
-    // if (playerStatus == YT.PlayerState.ENDED) nextPlay();
-    // if (event.data == YT.PlayerState.ENDED) nextPlay();
     if (event.data == YT.PlayerState.ENDED) {
         console.log("ended");
         nextPlay();

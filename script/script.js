@@ -9,7 +9,13 @@ $(function () {
         console.log( getId( newUrl ) );
         setList( getId( newUrl ) );
         $('#videoUrl').val('');
-    })
+    });
+    $("#btNext").on("click", function () {
+        nextPlay();
+    });
+    $("#btBack").on("click", function () {
+        backPlay();
+    });
 });
 
 // YouTubeのURLからIDを取得
@@ -34,9 +40,14 @@ function setList( id ) {
 
 // 次の動画を再生する
 function nextPlay() {
-    console.log(iNowVideoPointer);
+    ++iNowVideoPointer;
     if (iNowVideoPointer >= repeatVideos.length) iNowVideoPointer = 0;
     player.loadVideoById(repeatVideos[iNowVideoPointer]);
-    ++iNowVideoPointer;
-    console.log(iNowVideoPointer);
+}
+
+// 前の動画を再生する
+function backPlay() {
+    --iNowVideoPointer;
+    if (iNowVideoPointer <= -1) iNowVideoPointer = repeatVideos.length - 1;
+    player.loadVideoById(repeatVideos[iNowVideoPointer]);
 }
