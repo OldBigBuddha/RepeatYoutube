@@ -1,4 +1,4 @@
-var repeatVideos = ["BAyH7jexixE"];     //IDを管理
+var repeatVideos = [];     //IDを管理
 var iNowVideoPointer = 0;
 
 $(function () {
@@ -18,23 +18,6 @@ $(function () {
     });
     $("#btMakeShareUrl").on("click", function () {
         getShortUrl( makeShareUrl() );
-
-        getSelection().removeAllRanges();
-
-        var isFirstMade = false;
-            // 選択
-           var range = document.createRange();
-           range.selectNode($("#shareUrl").get(0));
-           getSelection().addRange(range);
-
-        //    コピー
-            document.execCommand("copy");
-
-            $("#btMakeShareUrl").attr( { "title":"Copyed" } );
-            setTimeout(function () {
-                $("#btMakeShareUrl").attr( { "title":"Copy to Clipboard" } )
-            }, 2000);
-
     });
 
     var ids = location.search;
@@ -109,4 +92,21 @@ function getShortUrl(url) {
                         console.error("Couldn't get shortURL");
                     }
                 });
+}
+
+function selectCopy() {
+    // 全解除
+    getSelection().removeAllRanges();
+        // 選択
+       var range = document.createRange();
+       range.selectNode($("#shareUrl").get(0));
+       getSelection().addRange(range);
+
+    //    コピー
+        document.execCommand("copy");
+
+        $("#btMakeShareUrl").attr( { "title":"Copyed" } );
+        setTimeout(function () {
+            $("#btMakeShareUrl").attr( { "title":"Copy to Clipboard" } )
+        }, 2000);
 }
