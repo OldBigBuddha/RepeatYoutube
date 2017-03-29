@@ -24,9 +24,11 @@ $(function () {
     if (ids != "") {
       ids = ids.split("=")[1];
       repeatVideos = ids.split("&");
-      for (var id in repeatVideos) setList(repeatVideos[id]);
+      for (var i = 0;i > repeatVideos.length; i++ ) {
+          setList(repeatVideos[id]);
+      }
   }
-  history.replaceState('','','/');
+  // history.replaceState('','','/');
 });
 
 // YouTubeのURLからIDを取得
@@ -41,6 +43,16 @@ function setList( id ) {
                 function (response) {
                     name = response.items[0].snippet.title;
                     if (name != "" ) {
+                        name = name.replace(/[&'`"<>]/g, function(match) {
+                        return {
+                          '&': '&amp;',
+                          "'": '&#x27;',
+                          '`': '&#x60;',
+                          '"': '&quot;',
+                          '<': '&lt;',
+                          '>': '&gt;',
+                        }[match]
+                    });
                         $('#videoList').append( "<li class='item'>" +
                                                                 "<img src=\"http://i.ytimg.com/vi/" + id + "/default.jpg\">" +
                                                                 "<span>" + name + "</span>" +
