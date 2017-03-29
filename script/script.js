@@ -57,9 +57,9 @@ function setList( id ) {
                                                                 "<span class='item'>" + name + "</span>" +
                                                                 "</li>" );
                     }
-                    $("button.item").each(function (e, v) {
+                    $("button.item").each(function (index, v) {
                         $(v).on("click", function () {
-                            $(v).remove();
+                            $(v).parent().remove();
                             repeatVideos.splice(index, 1);
                         });
                     });
