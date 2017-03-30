@@ -61,7 +61,7 @@ function setList( id, index ) {
         $(document).on("click","button.item", function () {
             var index_del = $( this ).data("index");
             repeatVideos.splice(index_del, 1);
-            $( this ).parent().remove();
+            updateList();
         });
 
 // List更新
