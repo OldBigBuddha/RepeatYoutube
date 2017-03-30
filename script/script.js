@@ -5,6 +5,7 @@ $(function () {
     $('#btAddUrl').on("click",function () {
         var newUrl = $('#videoUrl').val();
         repeatVideos.push( getId( newUrl ) );
+        logArray();
         var index_id = repeatVideos.length - 1;
         setList( getId( newUrl ), index_id );
         $('#videoUrl').val('');
@@ -22,6 +23,7 @@ $(function () {
     var ids = location.search;
     if (ids != "") {
       repeatVideos = ids.split("=")[1].split("&");
+      logArray();
       updateList();
   }
   // history.replaceState('','','/');
@@ -61,13 +63,17 @@ function setList( id, index ) {
         $(document).on("click","button.item", function () {
             var index_del = $( this ).data("index");
             repeatVideos.splice(index_del, 1);
+            logArray();
             updateList();
         });
 
 // List更新
 function updateList() {
     $("li").remove();
-    for (var i = 0; i < repeatVideos.length; i++) setList( repeatVideos[i], i );
+    for (var i = 0; i < repeatVideos.length; i++) {
+        setList( repeatVideos[i], i );
+        logArray();
+    }
 }
 
 
@@ -118,4 +124,8 @@ function selectCopy() {
         setTimeout(function () {
             $("#btMakeShareUrl").attr( { "title":"Copy to Clipboard" } )
         }, 2000);
+}
+
+function logArray() {
+    console.log(repeatVideos);
 }
