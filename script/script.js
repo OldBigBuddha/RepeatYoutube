@@ -1,14 +1,12 @@
 var repeatVideos = [];     //IDを管理
 var iNowVideoPointer = 0;
-var index_id;
 
 $(function () {
     $('#btAddUrl').on("click",function () {
         var newUrl = $('#videoUrl').val();
         repeatVideos.push( getId( newUrl ) );
-        index_id = repeatVideos.length - 1;
-        console.log("add");
-        setList( getId( newUrl ) );
+        var index_id = repeatVideos.length - 1;
+        setList( getId( newUrl ), index_id );
         $('#videoUrl').val('');
     });
     $("#btNext").on("click", function () {
@@ -24,7 +22,7 @@ $(function () {
     var ids = location.search;
     if (ids != "") {
       repeatVideos = ids.split("=")[1].split("&");
-      for (var i = 0; i < repeatVideos.length; i++) setList( repeatVideos[i] );
+      updateList();
   }
   // history.replaceState('','','/');
 });
@@ -36,7 +34,7 @@ function getId(fullUrl) {
 }
 
 // repeatVideosの中をListに表示する
-function setList( id ) {
+function setList( id, index ) {
     var name;
     $.get("https://www.googleapis.com/youtube/v3/videos?id=" + id + "&key=AIzaSyAmUFIh4GPN8uex2XNvjfp7kJy1MABN1co&part=snippet",
                 function (response) {
@@ -53,19 +51,11 @@ function setList( id ) {
                         }[match]
                     });
                     $('#videoList').append( "<li>" +
-                        "<button class='btDelete item' data-index='" + index_id + "'>×</button> " +
+                        "<button class='btDelete item' data-index='" + index + "'>×</button> " +
                         "<img src=\"https://i.ytimg.com/vi/" + id + "/default.jpg\" class='item'>" +
                         "<span class='item'>" + name + "</span>" +
                         "</li>" );
                     }
-
-                    // $("button.item").each(function (index, v) {
-                    //     $(v).on("click", function () {
-                    //         $(v).parent().remove();
-                    //         repeatVideos.splice(index, 1);
-                    //     });
-                    // });
-
             });
 }
         $(document).on("click","button.item", function () {
@@ -73,6 +63,14 @@ function setList( id ) {
             repeatVideos.splice(index_del, 1);
             $( this ).parent().remove();
         });
+
+// List更新
+function updateList() {
+    $("li").remove();
+    for (var i = 0; i < repeatVideos.length; i++) setList( repeatVideos[i], i );
+}
+
+
 // 次の動画を再生する
 function nextPlay() {
     ++iNowVideoPointer;
