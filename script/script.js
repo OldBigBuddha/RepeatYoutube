@@ -53,17 +53,23 @@ function setList( id ) {
                         }[match]
                     });
                     $('#videoList').append( "<li>" +
-                        "<button class='btDelete item' id='item" + index_id + "'>×</button> " +
+                        "<button class='btDelete item' data-index='" + index_id + "'>×</button> " +
                         "<img src=\"https://i.ytimg.com/vi/" + id + "/default.jpg\" class='item'>" +
                         "<span class='item'>" + name + "</span>" +
                         "</li>" );
                     }
-                    $("button.item").each(function (index, v) {
-                        $(v).on("click", function () {
-                            $(v).parent().remove();
-                            repeatVideos.splice(index, 1);
-                        });
+
+                    $("button.item").on("click", function () {
+                        var index_del = $( this ).data("index");
+                        repeatVideos.splice(index_del, 1);
+                        $( this ).parent().remove();
                     });
+                    // $("button.item").each(function (index, v) {
+                    //     $(v).on("click", function () {
+                    //         $(v).parent().remove();
+                    //         repeatVideos.splice(index, 1);
+                    //     });
+                    // });
 
             });
 }
