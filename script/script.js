@@ -24,7 +24,7 @@ $(function () {
       repeatVideos = ids.split("=")[1].split("&");
       updateList();
   }
-  history.replaceState('','','/');
+  history.replaceState('','','/RepeatYoutube_Remake/');
 });
 
 // YouTubeのURLからIDを取得
