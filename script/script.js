@@ -59,11 +59,6 @@ function setList( id ) {
                         "</li>" );
                     }
 
-                    $("button.item").on("click", function () {
-                        var index_del = $( this ).data("index");
-                        repeatVideos.splice(index_del, 1);
-                        $( this ).parent().remove();
-                    });
                     // $("button.item").each(function (index, v) {
                     //     $(v).on("click", function () {
                     //         $(v).parent().remove();
@@ -73,7 +68,11 @@ function setList( id ) {
 
             });
 }
-
+        $(document).on("click","button.item", function () {
+            var index_del = $( this ).data("index");
+            repeatVideos.splice(index_del, 1);
+            $( this ).parent().remove();
+        });
 // 次の動画を再生する
 function nextPlay() {
     ++iNowVideoPointer;
