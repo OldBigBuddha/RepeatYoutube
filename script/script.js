@@ -121,7 +121,3 @@ function selectCopy() {
             $("#btMakeShareUrl").attr( { "title":"Copy to Clipboard" } )
         }, 2000);
 }
-
-function  {
-    console.log(repeatVideos);
-}
