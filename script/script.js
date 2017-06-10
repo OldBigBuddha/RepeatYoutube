@@ -102,6 +102,7 @@ function getShortUrl(url) {
                 function (response) {
                     if (response.status_txt == "OK") {
                         $("#shareUrl").val( response.data.url ) ;
+                        console.log( response.data.url );
                     }　else {
                         console.error("Couldn't get shortURL");
                     }
