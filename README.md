@@ -1,4 +1,4 @@
-# RepeatYoutube_Remake
+# RepeatYoutube
 ## What's this?
 Youtubeの動画をひたすらリピートして流すサイト
 ## License
