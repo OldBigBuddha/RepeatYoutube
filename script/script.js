@@ -93,6 +93,8 @@ function makeShareUrl() {
     for (var i = 0; i < repeatVideos.length; i++) {
         url += i !== (repeatVideos.length - 1) ? repeatVideos[i] + "&" : repeatVideos[i];
     }
+    console.log( url );
+
     return url;
 }
 
@@ -102,8 +104,7 @@ function getShortUrl(url) {
                 function (response) {
                     if (response.status_txt == "OK") {
                         $("#shareUrl").val( response.data.url ) ;
-                        console.log( response.data.url );
-                    }　else {
+                    } else {
                         console.error("Couldn't get shortURL");
                     }
                     selectCopy();
